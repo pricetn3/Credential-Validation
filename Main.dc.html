@@ -1,0 +1,229 @@
+<!doctype html>
+<meta charset="utf-8"><style data-dc-design-system-vars>@layer{:root{--cc-navy:#29334a;--cc-navy-700:#21293c;--cc-navy-900:#131824;--blue-25:#f5fbff;--blue-50:#f0f9ff;--blue-100:#e0f2fe;--blue-200:#c8e9fe;--blue-300:#7dc8f7;--blue-400:#3888c5;--blue-500:#2e90fa;--blue-600:#0b6cb7;--blue-700:#0962a4;--blue-800:#085183;--blue-900:#0c3f66;--gray-25:#fdfdfd;--gray-50:#fafafa;--gray-100:#f5f5f5;--gray-200:#e9eaeb;--gray-300:#d5d7da;--gray-400:#a1a5ad;--gray-500:#717680;--gray-600:#535862;--gray-700:#414651;--gray-800:#272b35;--gray-900:#181d27;--gray-950:#0a0d12;--success-50:#ecfdf3;--success-200:#abefc6;--success-500:#17b26a;--success-700:#067647;--success-800:#085d3a;--warning-50:#fffaeb;--warning-200:#fedf89;--warning-500:#f79009;--warning-700:#b54708;--error-50:#fef3f2;--error-200:#fecdca;--error-500:#f04438;--error-700:#b42318;--bg-primary:#ffffff;--bg-secondary:#fafafa;--bg-tertiary:#f5f5f5;--bg-brand-subtle:#f5fbff;--fg-primary:#181d27;--fg-secondary:#535862;--fg-tertiary:#717680;--fg-quaternary:#a1a5ad;--fg-brand:#0b6cb7;--fg-on-brand:#ffffff;--border-primary:#e9eaeb;--border-secondary:#f5f5f5;--border-strong:#d5d7da;--border-brand:#0b6cb7;--border-input:#8c9199;--overlay-backdrop:#0a0d12b3;--overlay-icon:#0a0d1299;--overlay-icon-hover:#0a0d12bf;--shadow-xs:0 1px 2px 0 rgba(10, 13, 18, 0.05);--shadow-sm:0 1px 3px 0 rgba(10, 13, 18, 0.10), 0 1px 2px -1px rgba(10, 13, 18, 0.10);--shadow-md:0 4px 6px -1px rgba(10, 13, 18, 0.08), 0 2px 4px -2px rgba(10, 13, 18, 0.06);--shadow-lg:0 12px 16px -4px rgba(10, 13, 18, 0.08), 0 4px 6px -2px rgba(10, 13, 18, 0.03);--shadow-xl:0 20px 24px -4px rgba(10, 13, 18, 0.08), 0 8px 8px -4px rgba(10, 13, 18, 0.03);--shadow-2xl:0 24px 48px -12px rgba(10, 13, 18, 0.18);--shadow-3xl:0 32px 64px -12px rgba(10, 13, 18, 0.14);--shadow-button-primary:0 1px 2px 0 rgba(10,13,18,0.05), inset 0 0 0 1px rgba(0,0,0,0.20);--shadow-button-secondary:0 1px 2px 0 rgba(10,13,18,0.05), inset 0 -2px 0 0 rgba(10,13,18,0.05);--ring-focus:0 0 0 2px rgb(56, 136, 197);--space-0:0;--space-0_5:2px;--space-1:4px;--space-1_5:6px;--space-2:8px;--space-2_5:10px;--space-3:12px;--space-3_5:14px;--space-4:16px;--space-5:20px;--space-6:24px;--space-8:32px;--space-10:40px;--space-12:48px;--space-16:64px;--space-20:80px;--space-24:96px;--radius-none:0;--radius-xxs:2px;--radius-xs:4px;--radius-sm:6px;--radius-md:8px;--radius-lg:10px;--radius-xl:12px;--radius-2xl:16px;--radius-3xl:20px;--radius-4xl:24px;--radius-full:9999px;--fw-regular:400;--fw-medium:500;--fw-semibold:600;--fw-bold:700;--z-dropdown:50;--z-overlay:100;--z-modal:200;--z-toast:300;--font-display:'Inter', system-ui, -apple-system, sans-serif;--font-body:'Inter', system-ui, -apple-system, sans-serif;--font-mono:'Roboto Mono', ui-monospace, SFMono-Regular, Menlo, monospace;--text-text-display-2xl:400 72px/90px var(--font-body);--text-text-display-xl:400 60px/72px var(--font-body);--text-text-display-lg:400 48px/60px var(--font-body);--text-text-display-md:400 36px/44px var(--font-body);--text-text-display-sm:400 30px/38px var(--font-body);--text-text-display-xs:400 24px/32px var(--font-body);--text-text-xl:400 20px/30px var(--font-body);--text-text-lg:400 18px/28px var(--font-body);--text-text-md:400 16px/24px var(--font-body);--text-text-smed:400 15px/22px var(--font-body);--text-text-sm:400 14px/20px var(--font-body);--text-text-xs:400 12px/18px var(--font-body);}}</style>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Credential validation</title>
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+<link rel="stylesheet" href="ds/cc/tokens.css">
+<link rel="stylesheet" href="https://pricetn3.github.io/CC-Design-System/tokens.css" data-cc-shared-tokens>
+<link rel="stylesheet" href="ds/cc/components/bundle.css">
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500&amp;display=swap">
+<style>
+body{margin:0}
+a{color:var(--blue-800,#085183)}a:hover{color:var(--blue-900,#0C3F66)}
+.cv-validate{background:var(--success-700,#067647)}
+.cv-validate:hover{background:var(--success-800,#085D3A)}
+.cv-focus:focus-visible{outline:none;box-shadow:var(--ring-focus,0 0 0 2px #3888C5)}
+.cv-input{border:1px solid var(--border-input,#8C9199)}
+.cv-input:focus{outline:none;box-shadow:0 0 0 2px var(--blue-600,#0B6CB7)}
+.cv-input[aria-invalid="true"]{border-color:var(--error-500,#F04438)}
+.cv-input[aria-invalid="true"]:focus{box-shadow:0 0 0 2px var(--error-500,#F04438)}
+.cv-input::placeholder{color:var(--gray-500,#717680)}
+</style>
+</helmet>
+<div style="box-sizing: border-box; min-height: 100%; background: #ffffff; color: var(--gray-900, #181D27); font-family: Inter, system-ui, sans-serif; padding: 48px 32px 64px;">
+<main style="max-width: 720px; display: flex; flex-direction: column; gap: 40px;">
+
+<h1 style="margin: 0; font-size: 40px; line-height: 48px; font-weight: 800; letter-spacing: -0.02em;">Credential Validation</h1>
+
+<section aria-label="Validate a credential" style="display: flex; flex-direction: column; gap: 16px;">
+<div style="display: flex; flex-direction: column; gap: 16px;">
+<div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px;">
+<label for="cedid" style="box-sizing: border-box; background: var(--gray-700, #414651); color: #ffffff; border-radius: var(--radius-md, 8px); padding: 8px 12px; font-size: 14px; line-height: 18px; font-weight: 600; width: 168px;">Please enter CeDiD <span style="font-weight: 400;">(not case sensitive)</span></label>
+<input id="cedid" class="cv-input" type="text" autocomplete="off" spellcheck="false" placeholder="XXXX-XXXX-XXXX" maxlength="14" value="{{value}}" onChange="{{onInput}}" aria-invalid="{{ariaInvalid}}" aria-describedby="cedid-key cedid-error" style="box-sizing: border-box; flex: 1 1 240px; max-width: 320px; height: 48px; padding: 0 14px; border-radius: var(--radius-md, 8px); background: #ffffff; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 18px; letter-spacing: 0.04em; color: var(--gray-900, #181D27);">
+</div>
+
+<sc-if value="{{fieldError}}" hint-placeholder-val="{{ false }}">
+<p id="cedid-error" role="alert" style="margin: 0; display: flex; align-items: center; gap: 6px; font-size: 14px; line-height: 20px; color: var(--error-700, #B42318);">
+<svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+<span>{{fieldErrorText}}</span>
+</p>
+</sc-if>
+
+<p id="cedid-key" style="margin: 0; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 12px; line-height: 16px; color: var(--error-700, #B42318);">CeDiD key: 0123456789<br>ABCDEFGHIJKLMNOPQRSTUVWXYZ</p>
+
+<button type="button" onClick="{{onValidate}}" class="cv-validate cv-focus" style="box-sizing: border-box; width: 192px; height: 44px; border: 0; border-radius: var(--radius-md, 8px); color: #ffffff; font-family: inherit; font-size: 16px; line-height: 24px; font-weight: 500; cursor: pointer; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2);">Validate</button>
+</div>
+
+<div style="display: flex; align-items: center; gap: 8px;">
+<span style="font-size: 12px; line-height: 16px; font-style: italic; font-weight: 600; color: var(--gray-600, #535862);">powered by</span>
+<img src="./assets/dc30692d63da79e20f9514e0ce31c8a8.svg" alt="Paradigm" style="display: block; height: 32px; width: auto;">
+</div>
+</section>
+
+<div aria-live="polite" style="display: flex; flex-direction: column; gap: 24px;">
+<sc-if value="{{isValid}}" hint-placeholder-val="{{ false }}">
+<section aria-labelledby="valid-heading" style="display: flex; flex-direction: column; gap: 16px;">
+<div style="display: flex; flex-direction: column; gap: 4px;">
+<h2 id="valid-heading" style="margin: 0; display: flex; align-items: center; gap: 8px; font-size: 18px; line-height: 28px; font-weight: 600; color: var(--success-700, #067647);">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+This is a valid credential</h2>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: var(--gray-600, #535862);">Validated: {{validatedAt}}</p>
+</div>
+<table style="width: 100%; max-width: 560px; border-collapse: collapse; font-size: 14px; line-height: 20px;">
+<caption style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0);">Credential details</caption>
+<tbody>
+<tr style="background: var(--warning-50, #FFFAEB);"><th scope="row" style="text-align: left; width: 152px; padding: 12px 16px; border: 1px solid var(--gray-200, #E9EAEB); font-weight: 600;">CeDiD:</th><td style="padding: 12px 16px; border: 1px solid var(--gray-200, #E9EAEB); font-family: 'JetBrains Mono', ui-monospace, monospace;">{{record.cedid}}</td></tr>
+<tr><th scope="row" style="text-align: left; padding: 12px 16px; border: 1px solid var(--gray-200, #E9EAEB); font-weight: 600;">Name:</th><td style="padding: 12px 16px; border: 1px solid var(--gray-200, #E9EAEB);">{{record.name}}</td></tr>
+<tr style="background: var(--warning-50, #FFFAEB);"><th scope="row" style="text-align: left; padding: 12px 16px; border: 1px solid var(--gray-200, #E9EAEB); font-weight: 600;">Date:</th><td style="padding: 12px 16px; border: 1px solid var(--gray-200, #E9EAEB);">{{record.date}}</td></tr>
+<tr><th scope="row" style="text-align: left; padding: 12px 16px; border: 1px solid var(--gray-200, #E9EAEB); font-weight: 600;">Credential:</th><td style="padding: 12px 16px; border: 1px solid var(--gray-200, #E9EAEB);">{{record.credential}}</td></tr>
+</tbody>
+</table>
+<div style="display: flex; flex-direction: column; gap: 8px; max-width: 560px;">
+<div style="display: flex; flex-wrap: wrap; gap: 12px;">
+<a href="#" class="cv-validate cv-focus" style="box-sizing: border-box; display: inline-flex; align-items: center; height: 48px; padding: 0 20px; border-radius: var(--radius-md, 8px); color: #ffffff; text-decoration: none; font-size: 18px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2);"><span style="font-weight: 700;">Scholar</span><span style="font-weight: 400;">Record</span></a>
+<a href="#" class="cv-validate cv-focus" style="box-sizing: border-box; display: inline-flex; align-items: center; gap: 5px; height: 48px; padding: 0 20px; border-radius: var(--radius-md, 8px); color: #ffffff; text-decoration: none; font-size: 18px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.2);"><span style="font-weight: 700;">Experiential</span><span style="font-weight: 400;">Learner Record</span></a>
+</div>
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: var(--gray-600, #535862);">By selecting ScholarRecord™ or Experiential Learner Record, you will be taken to CeCredential Trust, a trusted partner of the University, to provide you with more detail of the learner's credential.</p>
+</div>
+</section>
+</sc-if>
+
+<sc-if value="{{isInvalid}}" hint-placeholder-val="{{ false }}">
+<section aria-labelledby="invalid-heading" style="box-sizing: border-box; max-width: 560px; background: var(--gray-50, #FAFAFA); border: 1px solid var(--gray-300, #D5D7DA); border-radius: var(--radius-lg, 10px); padding: 20px 24px; display: flex; flex-direction: column; gap: 12px;">
+<h2 id="invalid-heading" style="margin: 0; display: flex; align-items: center; gap: 8px; font-size: 16px; line-height: 24px; font-weight: 600; color: var(--error-700, #B42318);">
+<svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+We cannot validate the credential at this time.</h2>
+<ul style="margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 8px; font-size: 14px; line-height: 20px; color: var(--gray-700, #414651);">
+<li>The information provided does not match the information on record, or there was a connection error.</li>
+<li>Please contact your institution for assistance. Please provide the student name and CeDiD.</li>
+</ul>
+</section>
+</sc-if>
+</div>
+
+<section aria-labelledby="apostille-heading" style="display: flex; flex-direction: column; gap: 8px;">
+<h2 id="apostille-heading" style="margin: 0; font-size: 20px; line-height: 30px; font-weight: 800;">Apostille:</h2>
+<p style="margin: 0; font-size: 14px; line-height: 22px; color: var(--gray-600, #535862);">An Apostille may neither be required nor necessary. The CeDiploma has legal standing, is non-repudiating, and can be validated through the University's website to provide absolute confidence in the credential's authenticity. Questions should be redirected to <a href="#">[UNIVERSITY CONTACT]</a>.</p>
+</section>
+
+<section aria-label="Accreditation" style="display: flex; flex-direction: column; gap: 8px;">
+<img src="./assets/4e9859e94ab562c5b0a9982d1f4a5174.png" alt="CHEA, Council for Higher Education Accreditation, and CIQG, CHEA International Quality Group" style="display: block; height: 40px; width: auto; align-self: flex-start;">
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: var(--gray-700, #414651);">You may check institutional accreditation through the <a href="#">Council for Higher Education Accreditation (CHEA)</a>.</p>
+<p style="margin: 0; font-size: 12px; line-height: 18px; font-style: italic; color: var(--gray-600, #535862);">CHEA is an independent, non-profit organization, and neither endorses, authorizes, sponsors, nor is affiliated with CeCredential Trust.</p>
+</section>
+
+<p style="margin: 0; font-size: 14px; line-height: 20px; color: var(--gray-700, #414651);">For more information, please visit <a href="#">[UNIVERSITY WEBSITE]</a>.</p>
+
+<nav aria-label="About the CeDiploma" style="display: flex; flex-direction: column; gap: 20px;">
+<div style="display: flex; flex-direction: column; gap: 4px;"><a href="#" style="font-size: 16px; line-height: 24px; font-weight: 600;">Features</a><span style="font-size: 14px; line-height: 20px; color: var(--gray-700, #414651);">Learn more about the security features of a CeDiploma</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px;"><a href="#" style="font-size: 16px; line-height: 24px; font-weight: 600;">Overview</a><span style="font-size: 14px; line-height: 20px; color: var(--gray-700, #414651);">Overview of the CeDiploma</span></div>
+<div style="display: flex; flex-direction: column; gap: 4px;"><a href="#" style="font-size: 16px; line-height: 24px; font-weight: 600;">FAQs</a><span style="font-size: 14px; line-height: 20px; color: var(--gray-700, #414651);">View commonly asked questions about the CeDiploma</span></div>
+</nav>
+
+</main>
+
+<sc-if value="{{showRail}}" hint-placeholder-val="{{ true }}">
+<sc-if value="{{railOpen}}" hint-placeholder-val="{{ true }}">
+<nav aria-label="Prototype controls" style="position: fixed; top: 50%; right: 16px; transform: translateY(-50%); z-index: 60; box-sizing: border-box; width: 168px; padding: 14px 12px; display: flex; flex-direction: column; align-items: center; gap: 10px; border-radius: 22px; background: rgba(255,255,255,0.55); backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%); border: 1px solid rgba(255,255,255,0.7); box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), inset 0 -1px 0 rgba(255,255,255,0.25), 0 8px 32px rgba(10,13,18,0.12), 0 1px 3px rgba(10,13,18,0.06); font-family: Inter, system-ui, sans-serif;">
+<button type="button" class="cv-focus" onClick="{{closeRail}}" aria-label="Close controls" title="Close" style="position: absolute; top: -8px; right: -8px; width: 24px; height: 24px; padding: 0; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; background: rgba(255,255,255,0.75); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.9); color: var(--gray-600, #535862); box-shadow: 0 1px 3px rgba(10,13,18,0.12);">
+<svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+</button>
+<span style="font: 600 10px/14px Inter, system-ui, sans-serif; color: var(--gray-600, #535862); letter-spacing: 0.05em; text-transform: uppercase;">Prototype</span>
+<div style="width: 100%; height: 1px; background: rgba(10,13,18,0.08);"></div>
+<div style="display: flex; flex-direction: column; align-items: stretch; gap: 4px; width: 100%;">
+<span id="rail-state-label" style="font: 600 10px/14px Inter, system-ui, sans-serif; color: var(--gray-600, #535862); letter-spacing: 0.05em; text-transform: uppercase;">State</span>
+<div role="group" aria-labelledby="rail-state-label" style="display: flex; flex-direction: column; gap: 2px; background: rgba(120,120,128,0.12); border-radius: 9px; padding: 2px;">
+<sc-for list="{{states}}" as="s" hint-placeholder-count="3">
+<button type="button" class="cv-focus" onClick="{{s.go}}" aria-pressed="{{s.pressed}}" style="{{s.style}}">{{s.label}}</button>
+</sc-for>
+</div>
+</div>
+<div style="width: 100%; height: 1px; background: rgba(10,13,18,0.08);"></div>
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 10px; width: 100%;">
+<span id="rail-valid-label" style="font: 600 10px/14px Inter, system-ui, sans-serif; color: var(--gray-600, #535862); letter-spacing: 0.05em; text-transform: uppercase;">Valid CeDiD</span>
+<button type="button" role="switch" class="cv-focus" aria-checked="{{validAria}}" aria-labelledby="rail-valid-label" onClick="{{toggleValid}}" style="{{trackStyle}}"><span style="{{thumbStyle}}"></span></button>
+</div>
+<span style="font: 400 10px/14px Inter, system-ui, sans-serif; color: var(--gray-600, #535862); text-align: center;">{{validHint}}</span>
+</nav>
+</sc-if>
+<sc-if value="{{railClosed}}" hint-placeholder-val="{{ false }}">
+<button type="button" class="cv-focus" onClick="{{openRail}}" aria-label="Open prototype controls" title="Show controls" style="position: fixed; top: 50%; right: 0; transform: translateY(-50%); z-index: 60; padding: 12px 6px; display: flex; align-items: center; justify-content: center; cursor: pointer; color: var(--gray-600, #535862); background: rgba(255,255,255,0.55); backdrop-filter: blur(24px) saturate(180%); -webkit-backdrop-filter: blur(24px) saturate(180%); border: 1px solid rgba(255,255,255,0.7); border-right: none; border-radius: 14px 0 0 14px; box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 32px rgba(10,13,18,0.12), 0 1px 3px rgba(10,13,18,0.06);">
+<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+</button>
+</sc-if>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"step":{"editor":"enum","options":["empty","valid","invalid"],"default":"empty"},"rail":{"editor":"boolean","default":true},"cedid":{"editor":null,"default":""},"$preview":{"width":1280,"height":1240}}'>
+class Component extends DCLogic {
+  fmt(raw) {
+    const c = String(raw || '').replace(/[^a-z0-9]/gi, '').slice(0, 12).toUpperCase();
+    const parts = c.match(/.{1,4}/g);
+    return parts ? parts.join('-') : '';
+  }
+  now() {
+    return new Date().toISOString().replace('T', ' ').slice(0, 19) + ' GMT';
+  }
+  renderVals() {
+    const st = this.state || {};
+    const touched = !!st.touched;
+    const step = this.props.step ?? 'empty';
+    const VALID_ID = '25PK-I5IR-TODX';
+    const OTHER_ID = '7QX2-M4KD-9RTB';
+    const value = touched ? st.value : this.fmt(this.props.cedid ?? (step === 'empty' ? '' : step === 'invalid' ? OTHER_ID : VALID_ID));
+    const result = touched ? st.result : (step === 'empty' ? null : step);
+    const validOn = st.validOn !== false;
+    const railOpen = st.railOpen !== false;
+    const current = result || 'empty';
+    const goTo = (r) => () => {
+      this.setState({ touched: true, fieldErrorText: '', result: r === 'empty' ? null : r, value: r === 'empty' ? '' : r === 'valid' ? VALID_ID : OTHER_ID, validatedAt: this.now(), validOn: r === 'invalid' ? false : r === 'valid' ? true : validOn });
+    };
+    const states = [['empty', 'Before validating'], ['valid', 'Valid credential'], ['invalid', 'Cannot validate']].map(([id, label]) => {
+      const on = id === current;
+      return {
+        label, go: goTo(id), pressed: on ? 'true' : 'false',
+        style: { display: 'flex', alignItems: 'center', width: '100%', boxSizing: 'border-box', height: 24, padding: '0 10px', border: 0, borderRadius: 7, cursor: 'pointer', whiteSpace: 'nowrap', textAlign: 'left', font: (on ? '600' : '500') + ' 11px/16px Inter, system-ui, sans-serif', background: on ? 'rgba(255,255,255,0.9)' : 'transparent', color: on ? 'var(--gray-900, #181D27)' : 'var(--gray-600, #535862)', boxShadow: on ? '0 1px 2px 0 rgba(10,13,18,0.05)' : 'none' }
+      };
+    });
+    const fieldErrorText = touched ? st.fieldErrorText : '';
+    const record = {
+      cedid: value,
+      name: 'Jonathan Smith',
+      date: '05/22/2025',
+      credential: 'High Honors Graduate'
+    };
+    return {
+      value,
+      record,
+      validatedAt: (touched && st.validatedAt) || '2026-11-09 15:09:39 GMT',
+      isValid: result === 'valid',
+      isInvalid: result === 'invalid',
+      fieldError: !!fieldErrorText,
+      fieldErrorText,
+      ariaInvalid: fieldErrorText ? 'true' : 'false',
+      onInput: (e) => {
+        this.setState({ touched: true, value: this.fmt(e.target.value), result: null, fieldErrorText: '' });
+      },
+      // Prototype only: the side rail's Valid CeDiD switch decides the outcome.
+      // An empty or incomplete field is filled with a sample CeDiD first.
+      onValidate: () => {
+        const full = value.replace(/-/g, '').length === 12;
+        const filled = full ? value : (validOn ? VALID_ID : OTHER_ID);
+        this.setState({ touched: true, value: filled, fieldErrorText: '', result: validOn ? 'valid' : 'invalid', validatedAt: this.now(), validOn });
+      },
+      showRail: this.props.rail !== false,
+      railOpen,
+      railClosed: !railOpen,
+      closeRail: () => this.setState({ railOpen: false }),
+      openRail: () => this.setState({ railOpen: true }),
+      states,
+      validAria: validOn ? 'true' : 'false',
+      validHint: validOn ? 'Validate shows a valid credential' : 'Validate shows the cannot-validate message',
+      toggleValid: () => this.setState({ validOn: !validOn }),
+      trackStyle: { position: 'relative', flexShrink: 0, width: 40, height: 24, padding: 0, border: 0, borderRadius: 9999, cursor: 'pointer', background: validOn ? 'var(--blue-600, #0B6CB7)' : 'var(--gray-500, #717680)', transition: 'background .15s cubic-bezier(.2,.6,.2,1)' },
+      thumbStyle: { position: 'absolute', top: 2, left: validOn ? 18 : 2, width: 20, height: 20, borderRadius: 9999, background: '#ffffff', boxShadow: '0 1px 2px rgba(10,13,18,0.1)', transition: 'left .15s cubic-bezier(.2,.6,.2,1)' }
+    };
+  }
+}
+</script>
+</body>
+</html>
