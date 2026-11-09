@@ -19,13 +19,9 @@ Interactive prototype of the Credential Validation page: enter a CeDiD, select *
 | `Main.dc.html` | The prototype page, exported from the Credential Validation canvas in Claude Design (board 1) |
 | `index.html` | Forwards to `Main.dc.html` |
 | `support.js`, `vendor/` | The Claude Design runtime that renders the page (and React) |
-| `ds/cc/` | The CC Design System files the page uses |
+| `ds/cc/` | Styles that came with the export |
 | `assets/` | The Paradigm and CHEA logos |
 | `EXPORT-README.md` | Claude Design's notes on the export |
-
-## Design system
-
-Built with the [CC Design System](https://pricetn3.github.io/CC-Design-System/). `Main.dc.html` also loads the shared `tokens.css` from that site, so token changes there reach this page with no push here.
 
 ## Source
 
