@@ -18,6 +18,9 @@
 <style>
 body{margin:0}
 a{color:var(--blue-800,#085183)}a:hover{color:var(--blue-900,#0C3F66)}
+.cv-page{width:1160px;max-width:100%;margin:0 auto}
+@media (max-width:1260px){.cv-page{max-width:94%}}
+@media (max-width:760px){.cv-page{max-width:90%}}
 .cv-validate{background:var(--success-700,#067647)}
 .cv-validate:hover{background:var(--success-800,#085D3A)}
 .cv-focus:focus-visible{outline:none;box-shadow:var(--ring-focus,0 0 0 2px #3888C5)}
@@ -28,7 +31,8 @@ a{color:var(--blue-800,#085183)}a:hover{color:var(--blue-900,#0C3F66)}
 .cv-input::placeholder{color:var(--gray-500,#717680)}
 </style>
 </helmet>
-<div style="box-sizing: border-box; min-height: 100%; background: #ffffff; color: var(--gray-900, #181D27); font-family: Inter, system-ui, sans-serif; padding: 48px 32px 64px;">
+<div style="box-sizing: border-box; min-height: 100%; background: #ffffff; color: var(--gray-900, #181D27); font-family: Inter, system-ui, sans-serif; padding: 48px 0 64px;">
+<div class="cv-page">
 <main style="max-width: 720px; display: flex; flex-direction: column; gap: 40px;">
 
 <h1 style="margin: 0; font-size: 40px; line-height: 48px; font-weight: 800; letter-spacing: -0.02em;">Credential Validation</h1>
@@ -54,7 +58,7 @@ a{color:var(--blue-800,#085183)}a:hover{color:var(--blue-900,#0C3F66)}
 
 <div style="display: flex; align-items: center; gap: 8px;">
 <span style="font-size: 12px; line-height: 16px; font-style: italic; font-weight: 600; color: var(--gray-600, #535862);">powered by</span>
-<img src="./assets/dc30692d63da79e20f9514e0ce31c8a8.svg" alt="Paradigm" style="display: block; height: 32px; width: auto;">
+<img src="./assets/dc30692d63da79e20f9514e0ce31c8a8.svg" alt="Paradigm" style="display: block; height: 48px; width: auto;">
 </div>
 </section>
 
@@ -119,6 +123,7 @@ We cannot validate the credential at this time.</h2>
 </nav>
 
 </main>
+</div>
 
 <sc-if value="{{showRail}}" hint-placeholder-val="{{ true }}">
 <sc-if value="{{railOpen}}" hint-placeholder-val="{{ true }}">

@@ -5,6 +5,7 @@ Live prototype published with GitHub Pages. The owner is a designer, not a devel
 ## How the page gets here
 - `Main.dc.html`, `support.js`, `vendor/`, `ds/` and `assets/` are an **export from Claude Design**: board 1 of the Credential Validation canvas (https://claude.ai/artifact/6npDNv2EhkjjiWLFzegjyc), downloaded with the board's download button › **HTML (.zip)**.
 - Publish the export **exactly as exported**. Don't hand-edit it or add links to it; changes are made on the canvas and re-exported.
+- **One exception, still to carry over:** on 2026-11-09 the canvas couldn't be reached, so two changes were made by hand in `Main.dc.html`. They are the page container (`.cv-page`: 1160px wide and centered, 94% of the window below 1260px, 90% below 760px, matching the developed site; outer padding `48px 0 64px`) and the Paradigm logo at 48px tall (was 32px). Make the same changes on the canvas before the next export, or the next export will undo them.
 - `index.html`, `README.md` and this file are hand-written and can be edited directly.
 - The prototype's job is to show the new Experiential Learner Record button on the existing page. It isn't tied to the CC Design System: don't link it to the shared tokens or run the design system's drift check on it.
 
